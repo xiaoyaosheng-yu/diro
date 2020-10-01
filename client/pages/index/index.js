@@ -118,12 +118,12 @@ Page({
       })
       return false;
     }
-    if(senstiveWord.filterSensitiveWord(this.data.equ9).sensitiveWord != '') {
-      my.alert({
-        content: `您输入的内容不符合规范\r\n请修改后提交`,
-      })
-      return false;
-    }
+    // if(senstiveWord.filterSensitiveWord(this.data.equ9).sensitiveWord != '') {
+    //   my.alert({
+    //     content: `您输入的内容不符合规范\r\n请修改后提交`,
+    //   })
+    //   return false;
+    // }
     let params = {
       "q1": data.equ1,
       "q2": data.equ2,
@@ -142,13 +142,13 @@ Page({
           my.navigateTo({
             url: '/pages/result/result'
           });
-        }) 
+        }); 
       }, 
       fail: (res) => {
         console.log(res);
       } 
     }) 
-    console.log(params);
+    
   },
   onLoad(query) {
     // 页面加载
