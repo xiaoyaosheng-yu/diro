@@ -1,8 +1,8 @@
 <view class="main-content">
   <!-- <image mode="scaleToFill" src="/images/bg.jpg" class="bg"></image> -->
-  <view style="padding: 28rpx;z-index: 99;height: 100%;width: 100%;background: linear-gradient(to bottom, #f4f3f3 0%,#e2dfdf 100%);">
-    <view style="border: 2rpx solid #f7f7f6;background: #fff;padding: 4rpx;height: 100%;width: 100%;">
-      <view style="background: #f4f3f2;height: 100%;width: 100%; text-align: center;position: relative;padding-top: 10%;">
+  <view style="padding: 28rpx;z-index: 99;height: 100%;width: 100%;background: linear-gradient(to bottom, #fbfbfa 0%,#f5f2f1 100%);">
+    <view style="border: 2rpx solid #f7f7f6;background: linear-gradient(to bottom, #f5f4f4 0%,#e6e3e2 100%);padding: 4rpx;height: 100%;width: 100%;">
+      <view style="background: linear-gradient(to bottom, #f4f3f3 0%,#e1dedd 100%);height: 100%;width: 100%; text-align: center;position: relative;padding-top: 10%;">
         <image mode="widthFix" src="/images/message.png" style="width: 220rpx;margin-bottom: 80rpx;"></image>
         <view style="font-size: 32rpx;font-weight: 700;line-height: 50rpx;color: #000;">我们已收到您的反馈</view>
         <view style="font-size: 32rpx;font-weight: 700;line-height: 50rpx;color: #000;">感谢参与！</view>
