@@ -1,4 +1,9 @@
+import cloud from '@tbmp/mp-cloud-sdk';
+cloud.init({
+  env: 'test'
+}); 
 App({
+  cloud,
   onLaunch(options) {
     // 第一次打开
     // options.query == {number:1}
