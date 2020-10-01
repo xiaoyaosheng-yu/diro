@@ -1,0 +1,5 @@
+<view style="padding: 80rpx 0;">
+  <view style="display: flex;justify-content:center;">
+    <image onTap='starClick' data-index='{{item}}' a:for='{{[1,2,3,4,5]}}' a:key='{{index}}'  mode="scaleToFill" src="/images/{{item <= value ? 'star' : 'u-star'}}.png" style="width: 36rpx;height: 36rpx;margin: 0 15rpx;"/>
+  </view>
+</view>
