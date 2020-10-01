@@ -2,7 +2,12 @@
   <!-- <image mode="scaleToFill" src="/images/bg.jpg" class="bg"></image> -->
   <view style="padding: 28rpx;z-index: 99;height: 100%;width: 100%;background: linear-gradient(to bottom, #f4f3f3 0%,#e2dfdf 100%);">
     <view style="border: 2rpx solid #f7f7f6;background: #fff;padding: 4rpx;height: 100%;width: 100%;">
-      <view style="background: #f4f3f2;height: 100%;width: 100%;">1111</view>
+      <view style="background: #f4f3f2;height: 100%;width: 100%; text-align: center;position: relative;padding-top: 10%;">
+        <image mode="widthFix" src="/images/message.png" style="width: 220rpx;margin-bottom: 80rpx;"></image>
+        <view style="font-size: 32rpx;font-weight: 700;line-height: 50rpx;color: #000;">我们已收到您的反馈</view>
+        <view style="font-size: 32rpx;font-weight: 700;line-height: 50rpx;color: #000;">感谢参与！</view>
+        <view class="submit" onTap="submit" style="background: #000;color: #fff;text-align: center;font-size: 32rpx;border-radius: 45rpx;width: 56%;line-height: 72rpx;position: absolute;left: 22%;bottom: 10%;">确定</view>
+      </view>
     </view>
   </view>
   <!-- <view class="bg bg-content"></view> -->

@@ -85,6 +85,9 @@ Page({
     })
   },
   submit () {
+    my.navigateTo({
+      url: '/pages/result/result'
+    });
     // my.textRiskIdentification({
     //   content: '加我支付宝',
     //   type: ['keyword', '0', '1', '2', '3'],
@@ -127,13 +130,5 @@ Page({
   },
   onReachBottom() {
     // 页面被拉到底部
-  },
-  onShareAppMessage() {
-    // 返回自定义分享信息
-    return {
-      title: 'My App',
-      desc: 'My App description',
-      path: 'pages/index/index',
-    };
-  },
+  }
 });
