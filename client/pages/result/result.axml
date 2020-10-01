@@ -1,0 +1,9 @@
+<view class="main-content">
+  <!-- <image mode="scaleToFill" src="/images/bg.jpg" class="bg"></image> -->
+  <view style="padding: 28rpx;z-index: 99;height: 100%;width: 100%;background: linear-gradient(to bottom, #f4f3f3 0%,#e2dfdf 100%);">
+    <view style="border: 2rpx solid #f7f7f6;background: #fff;padding: 4rpx;height: 100%;width: 100%;">
+      <view style="background: #f4f3f2;height: 100%;width: 100%;">1111</view>
+    </view>
+  </view>
+  <!-- <view class="bg bg-content"></view> -->
+</view>

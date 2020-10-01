@@ -1,0 +1,9 @@
+{
+  "current": 0,
+  "modes": [
+    {
+      "title": "result",
+      "page": "pages/result/result"
+    }
+  ]
+}
