@@ -138,7 +138,7 @@ Page({
     my.authorize({ 
       scopes: 'scope.userInfo', 
       success: (res) => {
-        app.cloud.function.invoke('saveResults').then(res => {
+        app.cloud.function.invoke('saveResults', params).then(res => {
           my.navigateTo({
             url: '/pages/result/result'
           });

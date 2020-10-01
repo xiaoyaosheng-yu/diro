@@ -1,5 +1,8 @@
 {
-  "cloud": {
-    "type": "CLOUDAPP"
-  }
+    "cloud": {
+        "type": "CLOUDAPP"
+    },
+    "exclude": [
+        "server/**"
+    ]
 }
