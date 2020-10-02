@@ -142,10 +142,6 @@ Page({
         "q8": data.equ8,
         "other_advices": data.equ9
       };
-      my.alert({
-        content: JSON.stringify(params)
-      })
-      return false
       my.authorize({ 
         scopes: 'scope.userInfo', 
         success: (res) => {
