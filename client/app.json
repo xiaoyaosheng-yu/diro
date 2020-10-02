@@ -5,7 +5,7 @@
   ],
   "window": {
     "defaultTitle": "DIOR迪奥顾客满意度调研",
-    "allowsBounceVertical": false,
-    "pullRefresh": false
+    "allowsBounceVertical": "NO",
+    "navigationBarForceEnable": true
   }
 }

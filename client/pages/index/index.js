@@ -37,7 +37,8 @@ Page({
       {
         label: '设计普通',
         value: 3
-      }]
+      }],
+      subclick: true
     }
   },
   equ3Change (e) {
@@ -90,65 +91,73 @@ Page({
     })
   },
   submit () {
-    const data = this.data;
-    let equ3 = [];
-    let equ4 = [];
-    let eq3Text = [];
-    let eq4Text = [];
-    data.equ3List.forEach((ele, index) => {
-      if (ele.checked) {
-        equ3.push(ele.label)
-        eq3Text.push(ele.label)
-      } else {
-        eq3Text.push(0)
+    const that = this;
+    if (this.data.subclick) {
+      this.setData({
+        subclick: false
+      });
+      setTimeout(function () {
+        that.setData({
+          subclick: true
+        });
+      }, 3000);
+      const data = this.data;
+      let equ3 = [];
+      let equ4 = [];
+      let eq3Text = [];
+      let eq4Text = [];
+      data.equ3List.forEach((ele, index) => {
+        if (ele.checked) {
+          equ3.push(ele.label)
+          eq3Text.push(ele.label)
+        } else {
+          eq3Text.push(0)
+        }
+      });
+      data.equ4List.forEach((ele, index) => {
+        if (ele.checked) {
+          equ4.push(ele.label)
+          eq4Text.push(ele.label)
+        } else {
+          eq4Text.push(0)
+        }
+      });
+      if (data.equ1 == 0 || equ3.length == 0 || equ4.length == 0 || data.equ5 == 0 || data.equ6 == 0 || data.equ7 == 0 || data.equ8 == 0) {
+        my.showToast({
+          type: 'error',
+          content: `您还有题目未完成哦\r\n请完成后提交`,
+          duration: 3000,
+          success: () => {}
+        });
+        return false;
       }
-    });
-    data.equ4List.forEach((ele, index) => {
-      if (ele.checked) {
-        equ4.push(ele.label)
-        eq4Text.push(ele.label)
-      } else {
-        eq4Text.push(0)
-      }
-    });
-    console.log(equ3, equ4);
-    if (data.equ1 == 0 || data.equ2 == 0 || equ3.length == 0 || equ4.length == 0 || data.equ5 == 0 || data.equ6 == 0 || data.equ7 == 0 || data.equ8 == 0) {
-      my.alert({
-        content: `您还有题目未完成哦\r\n请完成后提交`,
-      })
-      return false;
-    }
-    // if(senstiveWord.filterSensitiveWord(this.data.equ9).sensitiveWord != '') {
-    //   my.alert({
-    //     content: `您输入的内容不符合规范\r\n请修改后提交`,
-    //   })
-    //   return false;
-    // }
-    let params = {
-      "q1": data.equ1,
-      "q2": data.equ2,
-      "q3": eq3Text.join(','),
-      "q4": eq4Text.join(','),
-      "q5": data.equ5,
-      "q6": data.equ6,
-      "q7": data.equ7,
-      "q8": data.equ8,
-      "other_advices": data.equ9
-    };
-    my.authorize({ 
-      scopes: 'scope.userInfo', 
-      success: (res) => {
-        app.cloud.function.invoke('saveResults', params).then(res => {
-          my.navigateTo({
-            url: '/pages/result/result'
+      let params = {
+        "q1": data.equ1,
+        "q2": data.equ2,
+        "q3": eq3Text.join(','),
+        "q4": eq4Text.join(','),
+        "q5": data.equ5,
+        "q6": data.equ6,
+        "q7": data.equ7,
+        "q8": data.equ8,
+        "other_advices": data.equ9
+      };
+      my.authorize({ 
+        scopes: 'scope.userInfo', 
+        success: (res) => {
+          app.cloud.function.invoke('saveResults', params).then(res => {
+            my.redirectTo({
+              url: '/pages/result/result'
+            });
+          }); 
+        }, 
+        fail: (res) => {
+          this.setData({
+            subclick: true
           });
-        }); 
-      }, 
-      fail: (res) => {
-        console.log(res);
-      } 
-    }) 
-    
+        } 
+      }) 
+    }
   },
   onLoad(query) {
     // 页面加载
