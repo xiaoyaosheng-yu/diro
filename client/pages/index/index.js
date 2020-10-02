@@ -146,7 +146,7 @@ Page({
         scopes: 'scope.userInfo', 
         success: (res) => {
           app.cloud.function.invoke('saveResults', params).then(res => {
-            my.redirectTo({
+            my.reLaunch({
               url: '/pages/result/result'
             });
           }); 
@@ -164,7 +164,7 @@ Page({
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
     app.cloud.function.invoke('saveResults', {}, 'isSaved').then((res) => {
       if (res.is_saved == 1) {
-        my.navigateTo({
+        my.reLaunch({
           url: '/pages/result/result'
         });
       }
