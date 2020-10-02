@@ -72,7 +72,7 @@
             </view>
             <view class="item">
               <view style="padding: 60rpx 0;">
-                <textarea onBlur="equ9Blur" value="{{equ9}}" style="min-height: 210rpx;font-size: 24rpx;" show-count="{{false}}" placeholder-style="font-size: 24rpx;" placeholder="如有其他建议与建议，请于此处填写"></textarea>
+                <textarea onInput="equ9Blur" value="{{equ9}}" style="min-height: 210rpx;font-size: 24rpx;" show-count="{{false}}" placeholder-style="font-size: 24rpx;" placeholder="如有其他建议与建议，请于此处填写"></textarea>
               </view>
             </view>
             <view class="item">

@@ -142,6 +142,10 @@ Page({
         "q8": data.equ8,
         "other_advices": data.equ9
       };
+      my.alert({
+        content: JSON.stringify(params)
+      })
+      return false
       my.authorize({ 
         scopes: 'scope.userInfo', 
         success: (res) => {
@@ -162,6 +166,15 @@ Page({
   onLoad(query) {
     // 页面加载
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
+    app.cloud.function.invoke('saveResults', {}, 'isSaved').then((res) => {
+      if (res.is_saved == 1) {
+        my.navigateTo({
+          url: '/pages/result/result'
+        });
+      }
+    }).catch(res => {
+      console.log(res);
+    })
   },
   onReady() {
     // 页面加载完成
