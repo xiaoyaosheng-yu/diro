@@ -136,7 +136,7 @@ Page({
         });
         return false;
       }
-      if (!mint.filterSync(data.equ9).pass) {
+      if (!mint.filterSync(data.equ9.toLowerCase()).pass) {
         my.showToast({
           type: 'error',
           content: `您输入的内容不符合规范\r\n请修改后提交`,
