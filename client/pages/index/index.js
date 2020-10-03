@@ -1,4 +1,9 @@
 import senstiveWord from '/pages/lib/index.js';
+import words from '/pages/lib/words.js'
+import Mint from 'mint-filter';
+
+const mint = new Mint(words.text)
+console.log(words)
 const app = getApp();
 // import cloud from '@tbmp/mp-cloud-sdk';
 // cloud.init({
@@ -131,6 +136,15 @@ Page({
         });
         return false;
       }
+      if (!mint.filterSync(data.equ9).pass) {
+        my.showToast({
+          type: 'error',
+          content: `您输入的内容不符合规范\r\n请修改后提交`,
+          duration: 3000,
+          success: () => {}
+        });
+        return false;
+      }
       let params = {
         "q1": data.equ1,
         "q2": data.equ2,
@@ -162,15 +176,7 @@ Page({
   onLoad(query) {
     // 页面加载
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
-    app.cloud.function.invoke('saveResults', {}, 'isSaved').then((res) => {
-      if (res.is_saved == 1) {
-        my.reLaunch({
-          url: '/pages/result/result'
-        });
-      }
-    }).catch(res => {
-      console.log(res);
-    })
+    console.log(mint.filterSync('这是一个'))
   },
   onReady() {
     // 页面加载完成

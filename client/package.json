@@ -4,6 +4,7 @@
   "main": "",
   "license": "MIT",
   "dependencies": {
-    "@tbmp/mp-cloud-sdk": "*"
+    "@tbmp/mp-cloud-sdk": "^1.4.2",
+    "mint-filter": "^3.0.1"
   }
 }
