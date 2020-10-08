@@ -2,7 +2,7 @@
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  padding: 68rpx;
+  /* padding: 68rpx; */
 }
 .bg {
   width: 100%;
@@ -17,7 +17,7 @@
 }
 .list {
   margin-top: 130rpx;
-  padding: 0 44rpx;
+  padding: 0 80rpx;
 }
 .qus {
   color: #000;

@@ -12,6 +12,7 @@ const app = getApp();
 Page({
   data () {
     return {
+      height: 667,
       equ1: 0,
       equ2: 0,
       equ5: 0,
@@ -184,6 +185,17 @@ Page({
   onShow() {
     // 页面显示
     // console.log(this)
+    const that = this;
+    console.log(my.getSystemInfoSync())
+    const query = my.createSelectorQuery();
+    query.select('.main-body').boundingClientRect()
+    query.selectViewport().scrollOffset()
+    query.exec(function(res){
+      console.log(res)
+      that.setData({
+        height: res[0].height
+      })
+    })
   },
   onHide() {
     // 页面隐藏
